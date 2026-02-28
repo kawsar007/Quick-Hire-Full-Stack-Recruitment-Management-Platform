@@ -1,6 +1,6 @@
 'use client';
+import HeroSection from '@/components/HeroSection';
 import JobCard from '@/components/JobCard';
-import SearchFilters from '@/components/SearchFilters';
 import { fetchJobs } from '@/lib/api';
 import { Job } from '@/types';
 import { useCallback, useEffect, useState } from 'react';
@@ -36,16 +36,16 @@ export default function HomePage() {
 
   return (
     <div className="space-y-6">
+
+      <HeroSection search={search} category={category} location={location}
+        onSearchChange={setSearch} onCategoryChange={setCategory}
+        onLocationChange={setLocation} onReset={reset} />
       <div>
         <h1 className="text-3xl font-bold text-gray-900">Find Your Next Job</h1>
         <p className="text-gray-500 mt-1">Browse {jobs.length} open positions</p>
       </div>
 
-      <SearchFilters
-        search={search} category={category} location={location}
-        onSearchChange={setSearch} onCategoryChange={setCategory}
-        onLocationChange={setLocation} onReset={reset}
-      />
+
 
       {loading && (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
