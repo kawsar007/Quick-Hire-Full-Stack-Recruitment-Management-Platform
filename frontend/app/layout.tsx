@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -15,10 +16,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${inter.className} bg-gray-50 min-h-screen`}>
         <Navbar />
-        <main className="max-w-6xl mx-auto px-4 py-8">{children}</main>
-        <footer className="text-center text-sm text-gray-400 py-8 border-t mt-12">
-          © {new Date().getFullYear()} QuickHire. All rights reserved.
-        </footer>
+        <main className="max-w-7xl mx-auto px-4 py-8">{children}</main>
+        {/* © {new Date().getFullYear()} QuickHire. All rights reserved. */}
+        <Footer />
       </body>
     </html>
   );
